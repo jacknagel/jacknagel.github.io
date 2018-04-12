@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Jack Nagel</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17386649-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-17386649-3');
+    </script>
 
-  <style>
-    html {
-      height: 100%;
-    }
+    <title>Jack Nagel</title>
 
-    body {
-      height: 100%;
-      margin: 0;
-    }
+    <style>
+      html {
+        height: 100%;
+      }
 
-    #container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      body {
+        height: 100%;
+        margin: 0;
+      }
 
-    #main {
-      font-family: -apple-system, HelveticaNeue, Roboto, "Segoe UI", "Lucida Grande", sans-serif;
-      text-align: center;
-    }
+      #container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    #main a:link {
-      text-decoration: none;
-    }
+      #main {
+        font-family: -apple-system, HelveticaNeue, Roboto, "Segoe UI", "Lucida Grande", sans-serif;
+        text-align: center;
+      }
 
-    #main a:hover, a:active {
-      text-decoration: underline;
-    }
+      #main a:link {
+        text-decoration: none;
+      }
 
-    #main h1 {
-      margin-top: 0;
-    }
+      #main a:hover, a:active {
+        text-decoration: underline;
+      }
 
-    #main ul {
-      margin: 0;
-      padding: 0;
-    }
+      #main h1 {
+        margin-top: 0;
+      }
 
-    #main li {
-      display: inline;
-      list-style-type: none;
-    }
+      #main ul {
+        margin: 0;
+        padding: 0;
+      }
 
-    #main li + li:before {
-      content: "\b7\a0";
-    }
-  </style>
+      #main li {
+        display: inline;
+        list-style-type: none;
+      }
+
+      #main li + li:before {
+        content: "\b7\a0";
+      }
+    </style>
+  </head>
 
   <body>
     <div id="container">
@@ -70,29 +80,19 @@
     <script>
       document.querySelector('#email').addEventListener('click', function (event) {
         event.preventDefault();
-        window.open( 'http://www.google.com/recaptcha/mailhide/d?k\x3d01yyTuGgGOetQ5C3BvHqG8gQ\x3d\x3d\x26c\x3dzPixfphJ3UJhgVRREth7OAmTeA-TSiGnb8CU0V8XHi8\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');
+        window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01yyTuGgGOetQ5C3BvHqG8gQ\x3d\x3d\x26c\x3dzPixfphJ3UJhgVRREth7OAmTeA-TSiGnb8CU0V8XHi8\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');
       });
 
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-17386649-3', 'auto');
-      ga('require', 'displayfeatures');
-      ga('send', 'pageview');
-      ga(function () {
-        function track (event) {
-          ga('send', 'event', {
-            eventCategory: 'link',
-            eventAction: 'click',
-            eventLabel: event.target.href
-          });
-        }
-
-        var links = document.querySelectorAll('a');
-        Array.prototype.forEach.call(links, function (link) {
-          link.addEventListener('click', track);
+      function track (event) {
+        gtag('send', 'event', {
+          eventCategory: 'link',
+          eventAction: 'click',
+          eventLabel: event.target.href
         });
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('a'), function (link) {
+        link.addEventListener('click', track);
       });
     </script>
   </body>
