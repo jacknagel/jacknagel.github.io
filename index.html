@@ -79,14 +79,17 @@
 
     <script>
       function track (event) {
-        gtag('send', 'event', {
-          eventCategory: 'link',
-          eventAction: 'click',
-          eventLabel: event.target.href
+        gtag('event', 'click', {
+          'event_category': 'link',
+          'event_label': event.target.href,
+          'transport_type': 'beacon',
+          'event_callback': function () {
+            document.location = event.target.href
+          }
         });
       }
 
-      Array.prototype.forEach.call(document.querySelectorAll('a'), function (link) {
+      document.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', track);
       });
     </script>
