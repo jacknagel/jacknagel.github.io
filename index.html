@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17386649-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-17386649-5');
+    </script>
+
     <title>Jack Nagel</title>
 
     <style>
@@ -54,30 +63,5 @@
         <a href="https://linkedin.com/in/jacknagel">LinkedIn</a>
       </p>
     </div>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17386649-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-17386649-3');
-    </script>
-
-    <script>
-      function track (event) {
-        gtag('event', 'click', {
-          'event_category': 'link',
-          'event_label': event.target.href,
-          'transport_type': 'beacon',
-          'event_callback': function () {
-            document.location = event.target.href
-          }
-        });
-      }
-
-      document.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', track);
-      });
-    </script>
   </body>
 </html>
